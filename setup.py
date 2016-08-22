@@ -32,6 +32,7 @@ setup(
     author_email='lagel@live.com',
     url='http://lagelalegal.github.io/',
     packages=find_packages(),
+    test_suite='pylint_sqlalchemy',
     extras_require={
         'testing': TESTS_REQUIRES
     },
