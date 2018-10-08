@@ -15,7 +15,7 @@ def register(linter):
 def handle_session(cls):
     """Handle the sqlalchemy.orm.scoping.scoped_session."""
     if cls.name == 'scoped_session':
-        source_files = cls.parent.source_file.split('/')
+        source_files = cls.parent.file.split('/')
         source_files[-1] = 'session.py'
         module = AstroidBuilder(MANAGER).file_build(
             '/'.join(source_files), 'sqlalchemy.orm.session'
@@ -27,4 +27,4 @@ def handle_session(cls):
         return cls
 
 
-MANAGER.register_transform(astroid.Class, handle_session)
+MANAGER.register_transform(astroid.ClassDef, handle_session)

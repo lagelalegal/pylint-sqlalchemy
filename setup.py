@@ -9,7 +9,8 @@ SHORT_DESC = ('pylint-sqlalchemy is a Pylint plugin for improving code'
 
 REQUIRES = [
     'SQLAlchemy',
-    'pylint >= 1.6'
+    'pylint >= 1.6',
+    'astroid >= 1.5',
 ]
 
 TESTS_REQUIRES = [
